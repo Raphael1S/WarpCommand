@@ -13,4 +13,4 @@ Antes de mais nada, adicione o plugin à pasta de plugins e, em seguida, siga as
 
 ## Como o plugin funciona?
 
-Quando você usa o comando "/setwarp <nome da warp>", é criada uma warp no arquivo "warps.yml" com as coordenadas e o mundo atuais. Em seguida, é gerado um comando para essa warp e torna-se executável. Quando um jogador executa esse comando, ele é teleportado para a posição especificada da warp.
+Quando você usa o comando "/setwarp 'warp'", é criada uma warp no arquivo "warps.yml" com as coordenadas e o mundo atual. Em seguida, é gerado um comando para essa warp e torna-se executável. Quando um jogador executa esse comando, ele é teleportado para a posição especificada da warp.
