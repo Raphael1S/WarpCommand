@@ -1,0 +1,13 @@
+name: WarpCommand
+version: 1.0.0B
+api: [4.0.0, 5.0.0]
+main: Raphael\Teleporte
+author: Raphael S.
+description: Um plugin de Warp por Comando :D
+permissions:
+  setwarp.setwarp:
+    default: op
+    description: Permissão para criar uma warp.
+  warp.comando:
+    default: true
+    description: Permissão para executar comando warp.
