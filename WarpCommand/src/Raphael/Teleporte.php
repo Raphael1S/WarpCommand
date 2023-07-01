@@ -24,6 +24,7 @@ class Teleporte extends PluginBase {
 
         // Registra os comandos das warps existentes
         $this->registerWarpCommands();
+        $this->getLogger()->warning("WarpCommand iniciado com sucesso! @ Raphael S.");
     }
 
     public function registerWarpCommands(): void {
