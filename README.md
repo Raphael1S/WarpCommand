@@ -1,11 +1,11 @@
 <h1 align="center">WarpCommand</h1>
-
+ <img src="https://poggit.pmmp.io/shield.state/WarpCommand">
 <h1 align="center">Um plugin de WarpCommand para PocketMine 4/5.</h1>
 <div align="center">
 	<a href="https://www.blazehosting.com.br/discord">
         <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="discord">
 		<a </a>
-  <img src="https://poggit.pmmp.io/shield.state/WarpCommand">
+ 
 
 ## Uso
 
