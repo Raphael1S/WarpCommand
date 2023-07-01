@@ -6,7 +6,6 @@
 	<a href="https://www.blazehosting.com.br/discord">
         <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="discord">
 		<a href="https://poggit.pmmp.io/p/WarpCommand"><img src="https://poggit.pmmp.io/shield.state/WarpCommand"></a>
-</a>
 
 ## Uso
 
