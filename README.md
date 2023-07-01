@@ -14,3 +14,11 @@ Antes de mais nada, adicione o plugin à pasta de plugins e, em seguida, siga as
 ## Como o plugin funciona?
 
 Quando você usa o comando /setwarp, é criada uma warp no arquivo "warps.yml" com as coordenadas e o mundo atual. Em seguida, é gerado um comando para essa warp e torna-se executável. Quando um jogador executa esse comando, ele é teleportado para a posição especificada da warp.
+
+## Futuras atualizações
+1. ▢ Definir permissões individuais para cada comando, especificando quem pode usá-los.
+2. ▢ Criar uma descrição para cada comando, explicando sua funcionalidade.
+3. ▢ Criar um comando para deletar warps, permitindo que os jogadores removam pontos de teletransporte.
+4. ▢ Criar um comando para atualizar warps, permitindo que os jogadores modifiquem pontos de teletransporte existentes.
+
+Atualmente, todos os jogadores têm permissão para usar todos os comandos relacionados às warps, pois a permissão "warp.comando" é atribuída a todos eles.
