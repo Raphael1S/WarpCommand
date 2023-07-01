@@ -17,8 +17,11 @@ Quando você usa o comando /setwarp, é criada uma warp no arquivo "warps.yml" c
 
 ## Futuras atualizações
 1. ▢ Definir permissões individuais para cada comando, especificando quem pode usá-los.
+   
 2. ▢ Criar uma descrição para cada comando, explicando sua funcionalidade.
+   
 3. ▢ Criar um comando para deletar warps, permitindo que os jogadores removam pontos de teletransporte.
+   
 4. ▢ Criar um comando para atualizar warps, permitindo que os jogadores modifiquem pontos de teletransporte existentes.
 
 Atualmente, todos os jogadores têm permissão para usar todos os comandos relacionados às warps, pois a permissão "warp.comando" é atribuída a todos eles.
