@@ -19,6 +19,9 @@ class Teleporte extends PluginBase {
         // Carrega as warps salvas
         $this->warps = (new Config($this->getDataFolder() . "warps.yml", Config::YAML))->getAll();
 
+        // Registra o comando /delwarp
+        $this->getServer()->getCommandMap()->register("delwarp", new DelWarpCommand($this));
+        
         // Registra o comando /setwarp
         $this->getServer()->getCommandMap()->register("setwarp", new SetWarpCommand($this));
 
