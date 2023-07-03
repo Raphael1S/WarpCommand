@@ -8,6 +8,9 @@ permissions:
   setwarp.setwarp:
     default: op
     description: Permissão para criar uma warp.
+  delwarp.delwarp:
+    default: op
+    description: Permissão para deletar uma warp.
   warp.comando:
     default: true
     description: Permissão para executar comando warp.
