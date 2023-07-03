@@ -25,6 +25,10 @@ class Teleporte extends PluginBase {
         // Registra o comando /setwarp
         $this->getServer()->getCommandMap()->register("setwarp", new SetWarpCommand($this));
 
+        // Registra o comando /warps
+        $this->getServer()->getCommandMap()->register("warps", new 
+WarpsCommand($this));
+        
         // Registra os comandos das warps existentes
         $this->registerWarpCommands();
         $this->getLogger()->warning("WarpCommand iniciado com sucesso! @ Raphael S.");
