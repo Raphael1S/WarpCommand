@@ -11,6 +11,9 @@ permissions:
   delwarp.delwarp:
     default: op
     description: Permissão para deletar uma warp.
+  warps.warps:
+    default: op
+    description: Permissão para ver warps.
   warp.comando:
     default: true
     description: Permissão para executar comando warp.
