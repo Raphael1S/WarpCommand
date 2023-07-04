@@ -13,7 +13,7 @@ class SetWarpCommand extends Command {
 
     private Teleporte $plugin;
 
-    public function __construct(Teleporte $plugin) {
+    public function __construct(private Teleporte $plugin) {
         parent::__construct("setwarp", "Define uma nova warp");
         $this->setPermission("setwarp.setwarp");
         $this->plugin = $plugin;
@@ -21,7 +21,8 @@ class SetWarpCommand extends Command {
 
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
         if (empty($args[0])) {
-            throw new InvalidCommandSyntaxException();
+        $sender->sendMessage("Por favor, insira um nome para Warp.");
+        return false;
         }
 
         $warpName = strtolower($args[0]);
