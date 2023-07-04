@@ -14,7 +14,7 @@ class WarpCommand extends Command {
     private Teleporte $plugin;
     private string $warpName;
 
-    public function __construct(Teleporte $plugin, string $warpName) {
+    public function __construct(private Teleporte $plugin, string $warpName) {
         parent::__construct($warpName, "Warp para " . $warpName);
         $this->plugin = $plugin;
         $this->warpName = $warpName;
