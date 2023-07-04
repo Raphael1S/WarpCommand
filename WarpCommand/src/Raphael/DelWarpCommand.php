@@ -1,4 +1,4 @@
-prova<?php
+<?php
 
 namespace Raphael;
 
