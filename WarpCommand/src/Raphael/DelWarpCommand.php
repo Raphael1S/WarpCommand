@@ -12,7 +12,7 @@ class DelWarpCommand extends Command {
 
     private Teleporte $plugin;
 
-    public function __construct(private Teleporte $plugin) {
+    public function __construct(Teleporte $plugin) {
         parent::__construct("delwarp", "Deleta uma warp existente");
         $this->setPermission("delwarp.delwarp");
         $this->plugin = $plugin;
