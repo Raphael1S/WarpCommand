@@ -19,7 +19,11 @@ class DelWarpCommand extends Command {
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
-
+        if (!$sender instanceof Player) {
+            $sender->sendMessage("Este comando só pode ser executado por um jogador.");
+            return false;
+        }
+        
         if (empty($args[0])) {
         $sender->sendMessage("Por favor, insira um nome para Warp.");
         return false;
