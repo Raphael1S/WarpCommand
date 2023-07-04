@@ -11,7 +11,7 @@ class WarpsCommand extends Command {
 
     private Teleporte $plugin;
 
-    public function __construct(Teleporte $plugin) {
+    public function __construct(private Teleporte $plugin) {
         parent::__construct("warps", "Mostra as warps disponíveis");
         $this->setPermission("warps.warps");
         $this->plugin = $plugin;
