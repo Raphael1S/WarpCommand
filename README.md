@@ -2,32 +2,22 @@
 
 <div align="center">
  <img src="https://poggit.pmmp.io/shield.state/WarpCommand">
-	<a </a>
- 
-<h1 align="center">Um plugin de WarpCommand para PocketMine 4/5.</h1>
-<div align="center">
-	<a href="https://www.blazehosting.com.br/discord">
-        <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="discord">
-		<a </a>
- 
 
-## Uso
+## Usage
 
-Antes de mais nada, adicione o plugin à pasta de plugins e, em seguida, siga as etapas necessárias para configurá-lo adequadamente.
+First of all add the plugin to the plugins folder and then follow the necessary steps to configure it properly.
 
-## Como o plugin funciona?
+## How does the plugin work?
 
-Quando você usa o comando /setwarp, é criada uma warp no arquivo "warps.yml" com as coordenadas e o mundo atual. Em seguida, é gerado um comando para essa warp e torna-se executável. Quando um jogador executa esse comando, ele é teleportado para a posição especificada da warp.
+When you use the /setwarp command, a warp is created in the "warps.yml" file with the coordinates and the current world. Then a command is generated for that warp and it becomes executable. When a player executes this command, he is teleported to the position specified by the warp.
 
-## Futuras atualizações
-1. ▢ Definir permissões individuais para cada comando, especificando quem pode usá-los.
+## Future updates
+1. ▢ Set individual permissions for each command, specifying who can use them.
    
-2. ▢ Criar uma descrição para cada comando, explicando sua funcionalidade.
+2. ▢ Create a description for each command, explaining its functionality.
    
-3. ■ Criar um comando para deletar warps, permitindo que os jogadores removam pontos de teletransporte.
+3. ■ Create a command to delete warps, allowing players to remove warp points.
    
-4. ▢ Criar um comando para atualizar warps, permitindo que os jogadores modifiquem pontos de teletransporte existentes.
+4. ▢ Create a command to update warps, allowing players to modify existing teleport points.
 
-5. ■ Criar um comando para ver as warps criadas.
- 
-Atualmente, todos os jogadores têm permissão para usar todos os comandos relacionados às warps, pois a permissão "warp.comando" é atribuída a todos eles.
+5. ■ Create a command to see the created warps.
