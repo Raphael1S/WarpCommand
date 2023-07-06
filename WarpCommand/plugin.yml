@@ -1,19 +1,23 @@
 name: WarpCommand
-version: 1.0.0B
+version: 1.1.0
 api: [4.0.0, 5.0.0]
-main: Raphael\Teleporte
-author: Raphael S.
-description: Um plugin de Warp por Comando :D
+main: Raphael1S\WarpCommand\Main
+author: Raphael1S
+description: "A simple but powerful Warps plugin!"
+
 permissions:
-  setwarp.setwarp:
+  warpcommand.setwarp:
     default: op
-    description: Permissão para criar uma warp.
-  delwarp.delwarp:
+    description: Permission to create a warp using /setwarp.
+    
+  warpcommand.delwarp:
     default: op
-    description: Permissão para deletar uma warp.
-  warps.warps:
+    description: Permission to delete a warp using /delwarp.
+    
+  warpcommand.warps:
     default: op
-    description: Permissão para ver warps.
-  warp.comando:
+    description: Permission to view warps using /warps.
+    
+  warpcommand.command:
     default: true
-    description: Permissão para executar comando warp.
+    description: Permission to perform a warp teleport.
