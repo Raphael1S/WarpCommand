@@ -58,7 +58,6 @@ class SetWarpCommand extends Command implements PluginOwned {
     }
 
     private function createWarpCommand(string $warpName) {
-        $commandName = strtolower($warpName);
 
         $this->plugin->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this->plugin, $warpName));
     }
