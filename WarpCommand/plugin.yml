@@ -5,6 +5,7 @@ main: Raphael1S\WarpCommand\Main
 author: Raphael1S
 description: "A simple but powerful Warps plugin!"
 
+
 permissions:
   warpcommand.setwarp:
     default: op
