@@ -11,22 +11,22 @@ use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase {
 
-    /** @var array */
-    private $warps;
+        /** @var array */
+        private $warps;
 
     public function onEnable(): void {
         // Load saved warps
         
         $this->warps = (new Config($this->getDataFolder() . "warps.yml", Config::YAML))->getAll();
 
-// Register the /delwarp command
-$this->getServer()->getCommandMap()->register("WarpCommand", new DelWarpCommand($this));
+        // Register the /delwarp command
+        $this->getServer()->getCommandMap()->register("WarpCommand", new DelWarpCommand($this));
 
-// Register the /setwarp command
-$this->getServer()->getCommandMap()->register("WarpCommand", new SetWarpCommand($this));
+        // Register the /setwarp command
+        $this->getServer()->getCommandMap()->register("WarpCommand", new SetWarpCommand($this));
 
-// Register the /warps command
-$this->getServer()->getCommandMap()->register("WarpCommand", new WarpsCommand($this));
+        // Register the /warps command
+        $this->getServer()->getCommandMap()->register("WarpCommand", new WarpsCommand($this));
         
         // Register existing warp commands
         $this->registerWarpCommands();
@@ -36,7 +36,7 @@ $this->getServer()->getCommandMap()->register("WarpCommand", new WarpsCommand($t
         foreach ($this->warps as $warpName => $warpData) {
             $commandName = strtolower($warpName);
             
- $this->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this, $warpName));
+         $this->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this, $warpName));
        }
     }
 }
