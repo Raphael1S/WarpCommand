@@ -3,7 +3,8 @@
 <div align="center">
  <img src="https://poggit.pmmp.io/shield.state/WarpCommand">
 
- [![Poggit-CI](https://poggit.pmmp.io/ci.shield/Raphael1S/WarpCommand/WarpCommand)](https://poggit.pmmp.io/ci/Raphael1S/WarpCommand/WarpCommand)
+ 
+ [![](https://poggit.pmmp.io/shield.dl/WarpCommand)](https://poggit.pmmp.io/p/WarpCommand)
 
 ## Usage
 
