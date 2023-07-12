@@ -11,11 +11,14 @@ use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase {
 
+    /** @var array */
+    private $warps;
+
     public function onEnable(): void {
         // Load saved warps
+        $config = new Config($this->getDataFolder() . "warps.yml", Config::YAML);
+        $this->warps = $config->getAll();
         
-        $this->warps = (new Config($this->getDataFolder() . "warps.yml", Config::YAML))->getAll();
-
         // Register the /delwarp command
         $this->getServer()->getCommandMap()->register("WarpCommand", new DelWarpCommand($this));
 
