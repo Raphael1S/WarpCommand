@@ -15,12 +15,14 @@ class WarpCommand extends Command implements PluginOwned {
     
     private Main $plugin;
     private string $warpName;
+    private string $warpDescription;
 
-    public function __construct(Main $plugin, string $warpName) {
+    public function __construct(Main $plugin, string $warpName, string $warpDescription) {
         parent::__construct($warpName, "Warp to " . $warpName);
         $this->plugin = $plugin;
         $this->warpName = $warpName;
-        $this->setDescription("Warp to {$warpName}");
+        $this->warpDescription = $warpDescription;
+        $this->setDescription($this->warpDescription);
         $this->setPermission("warpcommand.command");
     }
     
