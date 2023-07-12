@@ -41,6 +41,7 @@ class SetWarpCommand extends Command implements PluginOwned {
 
         $position = $sender->getPosition();
         $world = $position->getWorld()->getFolderName();
+        $description = "Warp to {$warpName}";
 
         $config = new Config($this->plugin->getDataFolder() . "warps.yml", Config::YAML);
         $config->set($warpName, [
@@ -48,6 +49,7 @@ class SetWarpCommand extends Command implements PluginOwned {
             "y" => $position->getY(),
             "z" => $position->getZ(),
             "world" => $world,
+            "description" => $description,
         ]);
         $config->save();
         $sender->sendMessage(TextFormat::GREEN . "The warp {$warpName} has been created!");
@@ -57,8 +59,16 @@ class SetWarpCommand extends Command implements PluginOwned {
         return true;
     }
 
-    private function createWarpCommand(string $warpName) {
-
-        $this->plugin->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this->plugin, $warpName));
+    private function createWarpCommand(string $warpName): void {
+    $config = new Config($this->plugin->getDataFolder() . "warps.yml", Config::YAML);
+    $warpData = $config->get($warpName);
+    
+    if ($warpData === null) {
+        return;
     }
+
+    $warpDescription = $warpData["description"];
+
+    $this->plugin->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this->plugin, $warpName, $warpDescription));
+ }
 }
