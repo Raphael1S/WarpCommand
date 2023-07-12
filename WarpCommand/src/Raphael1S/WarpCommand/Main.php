@@ -11,9 +11,6 @@ use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase {
 
-        /** @var array */
-        private $warps;
-
     public function onEnable(): void {
         // Load saved warps
         
