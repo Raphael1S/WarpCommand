@@ -11,13 +11,13 @@ use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase {
 
-    /** @var array */
-    private $warps;
+        /** @var array */
+        private $warps;
 
     public function onEnable(): void {
         // Load saved warps
-        $config = new Config($this->getDataFolder() . "warps.yml", Config::YAML);
-        $this->warps = $config->getAll();
+        
+        $this->warps = (new Config($this->getDataFolder() . "warps.yml", Config::YAML))->getAll();
         
         // Register the /delwarp command
         $this->getServer()->getCommandMap()->register("WarpCommand", new DelWarpCommand($this));
@@ -36,13 +36,10 @@ class Main extends PluginBase {
     }
 
     public function registerWarpCommands(): void {
-    $config = new Config($this->getDataFolder() . "warps.yml", Config::YAML);
-    
-    foreach ($config->getAll() as $warpName => $warpData) {
-        $commandName = strtolower($warpName);
-        $warpDescription = $warpData["description"];
-
-        $this->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this, $warpName, $warpDescription));
+        foreach ($this->warps as $warpName => $warpData) {
+            $commandName = strtolower($warpName);
+            $warpDescription = $warpData["description"];
+            $this->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this, $warpName, $warpDescription));
+       }
     }
-  }
 }
