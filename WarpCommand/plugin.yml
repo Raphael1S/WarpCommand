@@ -18,7 +18,11 @@ permissions:
   warpcommand.warps:
     default: op
     description: Permission to view warps using /warps.
-    
+
+  warpcommand.updatewarp:
+    default: op
+    description: Permission to update warps using /updatewarp.
+
   warpcommand.command:
     default: true
     description: Permission to perform a warp teleport.
