@@ -44,7 +44,7 @@ class UpdateWarpCommand extends Command implements PluginOwned {
 
         $config = new Config($this->plugin->getDataFolder() . "warps.yml", Config::YAML);
         if (!$config->exists($warpName)) {
-            $sender->sendMessage(TextFormat::RED . "The warp '{$warpName}' does not exist.");
+            $sender->sendMessage(TextFormat::RED . "The warp {$warpName} does not exist.");
             return false;
         }
 
@@ -56,7 +56,7 @@ class UpdateWarpCommand extends Command implements PluginOwned {
 
         $config->set($warpName, $warpData);
         $config->save();
-        $sender->sendMessage(TextFormat::GREEN . "The warp '{$warpName}' has been updated!");
+        $sender->sendMessage(TextFormat::GREEN . "The warp {$warpName} has been updated!");
 
         return true;
     }
