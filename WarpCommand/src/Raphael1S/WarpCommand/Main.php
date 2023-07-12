@@ -28,15 +28,21 @@ class Main extends PluginBase {
         // Register the /warps command
         $this->getServer()->getCommandMap()->register("WarpCommand", new WarpsCommand($this));
         
+        // Register the /updatewarp command
+        $this->getServer()->getCommandMap()->register("WarpCommand", new UpdateWarpCommand($this));
+        
         // Register existing warp commands
         $this->registerWarpCommands();
     }
 
     public function registerWarpCommands(): void {
-        foreach ($this->warps as $warpName => $warpData) {
-            $commandName = strtolower($warpName);
-            
-         $this->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this, $warpName));
-       }
+    $config = new Config($this->getDataFolder() . "warps.yml", Config::YAML);
+    
+    foreach ($config->getAll() as $warpName => $warpData) {
+        $commandName = strtolower($warpName);
+        $warpDescription = $warpData["description"];
+
+        $this->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this, $warpName, $warpDescription));
     }
+  }
 }
