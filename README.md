@@ -17,10 +17,10 @@ When you use the /setwarp command, a warp is created in the "warps.yml" file wit
 ## Future updates
 1. ▢ Set individual permissions for each command, specifying who can use them.
    
-2. ▢ Create a description for each command, explaining its functionality.
+2. ■ Create a description for each command, explaining its functionality.
    
 3. ■ Create a command to delete warps, allowing players to remove warp points.
    
-4. ▢ Create a command to update warps, allowing players to modify existing teleport points.
+4. ■ Create a command to update warps, allowing players to modify existing teleport points.
 
 5. ■ Create a command to see the created warps.
