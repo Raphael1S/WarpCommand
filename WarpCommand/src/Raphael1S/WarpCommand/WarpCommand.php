@@ -56,6 +56,28 @@ class WarpCommand extends Command implements PluginOwned {
 
         $sender->teleport($position);
         $sender->sendMessage(TextFormat::GREEN . "You have been teleported!");
+        $title = "§e× {$this->warpName} ×";
+        $subtitle = "§aYou've been teleported!";
+        $fadeIn = 20; // 20 ticks (1 second) for title to fade in
+        $stay = 60;   // 40 ticks (2 seconds) for title to stay on screen
+        $fadeOut = 20; // 20 ticks (1 second) for title to fade out
+        
+        $sender->sendTitle($title, $subtitle, $fadeIn, $stay, $fadeOut);
+        $sound = "random.levelup";
+        $volume = "1";
+        $pitch = "1";
+        $this->playSound($sender, $sound, $volume, $pitch);
         return true;
-    }
+        }
+
+        protected function playSound($sender, string $sound, float $volume = 0, float $pitch = 0): void{
+        $packet = new PlaySoundPacket();
+        $packet->soundName = $sound;
+        $packet->x = $sender->getPosition()->getX();
+        $packet->y = $sender->getPosition()->getY();
+        $packet->z = $sender->getPosition()->getZ();
+        $packet->volume = $volume;
+        $packet->pitch = $pitch;
+        $sender->getNetworkSession()->sendDataPacket($packet);
+        }
 }
