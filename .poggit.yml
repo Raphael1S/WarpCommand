@@ -5,5 +5,5 @@ branches:
 projects:
   WarpCommand:
     path: WarpCommand/
-    icon: "icon.png"
+    icon: "WarpCommand/icon.png"
 ...
