@@ -59,7 +59,7 @@ class WarpCommand extends Command implements PluginOwned {
         $title = "§e× {$this->warpName} ×";
         $subtitle = "§aYou've been teleported!";
         $fadeIn = 20; // 20 ticks (1 second) for title to fade in
-        $stay = 60;   // 40 ticks (2 seconds) for title to stay on screen
+        $stay = 60;   // 60 ticks (3 seconds) for title to stay on screen
         $fadeOut = 20; // 20 ticks (1 second) for title to fade out
         
         $sender->sendTitle($title, $subtitle, $fadeIn, $stay, $fadeOut);
