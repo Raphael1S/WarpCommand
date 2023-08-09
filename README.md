@@ -1,4 +1,4 @@
-<h1 align="center">WarpCommand</h1>
+no<h1 align="center">WarpCommand</h1>
 
 <div align="center">
  <img src="https://poggit.pmmp.io/shield.state/WarpCommand">
@@ -15,7 +15,7 @@ First of all add the plugin to the plugins folder and then follow the necessary 
 When you use the /setwarp command, a warp is created in the "warps.yml" file with the coordinates and the current world. Then a command is generated for that warp and it becomes executable. When a player executes this command, he is teleported to the position specified by the warp.
 
 ## Future updates
-1. ▢ Set individual permissions for each command, specifying who can use them.
+1. ■ Set individual permissions for each command, specifying who can use them.
    
 2. ■ Create a description for each command, explaining its functionality.
    
