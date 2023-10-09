@@ -13,7 +13,7 @@ use pocketmine\plugin\PluginOwned;
 use pocketmine\permission\PermissionManager;
 use pocketmine\permission\Permission;
 use pocketmine\permission\DefaultPermissions;
-use pocketmine\world\sound\XpLevelUpSound;
+use pocketmine\world\sound\AnvilUseSound;
 
 
 class WarpCommand extends Command implements PluginOwned {
@@ -73,7 +73,7 @@ class WarpCommand extends Command implements PluginOwned {
         $fadeOut = 20;
         
         $sender->sendTitle($title, $subtitle, $fadeIn, $stay, $fadeOut);
-        $sender->getWorld()->addSound($sender->getPosition(), new XpLevelUpSound(1));
+        $sender->getWorld()->addSound($sender->getPosition(), new AnvilUseSound());
         return true;
         }
 }
