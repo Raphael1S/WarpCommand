@@ -39,7 +39,8 @@ class Main extends PluginBase {
         foreach ($this->warps as $warpName => $warpData) {
             $commandName = strtolower($warpName);
             $warpDescription = $warpData["description"];
-            $this->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this, $warpName, $warpDescription));
+            $warpPerm = $warpData["permission"];
+            $this->getServer()->getCommandMap()->register("WarpCommand", new WarpCommand($this, $warpName, $warpDescription, $warpPerm));
        }
     }
 }
