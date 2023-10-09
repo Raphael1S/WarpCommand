@@ -10,21 +10,29 @@ use pocketmine\utils\TextFormat;
 use pocketmine\world\Position;
 use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginOwned;
-use pocketmine\network\mcpe\protocol\PlaySoundPacket;
+use pocketmine\permission\PermissionManager;
+use pocketmine\permission\Permission;
+use pocketmine\permission\DefaultPermissions;
+use pocketmine\world\sound\XpLevelUpSound;
+
 
 class WarpCommand extends Command implements PluginOwned {
     
     private Main $plugin;
     private string $warpName;
     private string $warpDescription;
+    private string $warpPerm;
 
-    public function __construct(Main $plugin, string $warpName, string $warpDescription) {
-        parent::__construct($warpName, "Warp to " . $warpName);
+    public function __construct(Main $plugin, string $warpName, string $warpDescription, string $warpPerm) {
+        PermissionManager::getInstance()->addPermission(new Permission($warpPerm)); 
+        $opRoot = PermissionManager::getInstance()->getPermission(DefaultPermissions::ROOT_OPERATOR);
+        $opRoot->addChild($warpPerm, true);
         $this->plugin = $plugin;
         $this->warpName = $warpName;
         $this->warpDescription = $warpDescription;
+        $this->warpPerm = $warpPerm;
         $this->setDescription($this->warpDescription);
-        $this->setPermission("warpcommand.command");
+        $this->setPermission($this->warpPerm);
     }
     
     public function getOwningPlugin(): Plugin
@@ -33,6 +41,8 @@ class WarpCommand extends Command implements PluginOwned {
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
+
+            
         if (!$sender instanceof Player) {
             $sender->sendMessage(TextFormat::RED . "This command can only be executed by one player!");
             return false;
@@ -58,26 +68,12 @@ class WarpCommand extends Command implements PluginOwned {
         $sender->sendMessage(TextFormat::GREEN . "You have been teleported!");
         $title = "§e× {$this->warpName} ×";
         $subtitle = "§aYou've been teleported!";
-        $fadeIn = 20; // 20 ticks (1 second) for title to fade in
-        $stay = 60;   // 60 ticks (3 seconds) for title to stay on screen
-        $fadeOut = 20; // 20 ticks (1 second) for title to fade out
+        $fadeIn = 20;
+        $stay = 60;
+        $fadeOut = 20;
         
         $sender->sendTitle($title, $subtitle, $fadeIn, $stay, $fadeOut);
-        $sound = "random.levelup";
-        $volume = "1";
-        $pitch = "1";
-        $this->playSound($sender, $sound, $volume, $pitch);
+        $sender->getWorld()->addSound($sender->getPosition(), new XpLevelUpSound());
         return true;
-        }
-
-        protected function playSound($sender, string $sound, float $volume = 0, float $pitch = 0): void{
-        $packet = new PlaySoundPacket();
-        $packet->soundName = $sound;
-        $packet->x = $sender->getPosition()->getX();
-        $packet->y = $sender->getPosition()->getY();
-        $packet->z = $sender->getPosition()->getZ();
-        $packet->volume = $volume;
-        $packet->pitch = $pitch;
-        $sender->getNetworkSession()->sendDataPacket($packet);
         }
 }
