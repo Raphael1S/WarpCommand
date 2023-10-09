@@ -24,6 +24,7 @@ class WarpCommand extends Command implements PluginOwned {
     private string $warpPerm;
 
     public function __construct(Main $plugin, string $warpName, string $warpDescription, string $warpPerm) {
+        parent::__construct($warpName, $warpDescription, $warpPerm);
         PermissionManager::getInstance()->addPermission(new Permission($warpPerm)); 
         $opRoot = PermissionManager::getInstance()->getPermission(DefaultPermissions::ROOT_OPERATOR);
         $opRoot->addChild($warpPerm, true);
