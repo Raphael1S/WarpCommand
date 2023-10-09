@@ -59,7 +59,7 @@ class SetWarpCommand extends Command implements PluginOwned {
             "permission" => $warpPerm,
         ]);
         $config->save();
-        $sender->sendMessage(TextFormat::GREEN . "The warp {$warpName} has been created!\n- World: §f{$world}\n§a- Description: §f{$description}\n§a- Permission: §f{$warpPerm}");
+        $sender->sendMessage(TextFormat::GREEN . "The warp §f{$warpName} §ahas been created!\n- World: §f{$world}\n§a- Description: §f{$description}\n§a- Permission: §f{$warpPerm}");
 
         $this->createWarpCommand($warpName, $warpPerm);
 
