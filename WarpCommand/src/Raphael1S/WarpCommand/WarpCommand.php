@@ -73,7 +73,7 @@ class WarpCommand extends Command implements PluginOwned {
         $fadeOut = 20;
         
         $sender->sendTitle($title, $subtitle, $fadeIn, $stay, $fadeOut);
-        $sender->getWorld()->addSound($sender->getPosition(), new XpLevelUpSound());
+        $sender->getWorld()->addSound($sender->getPosition(), new XpLevelUpSound(1));
         return true;
         }
 }
